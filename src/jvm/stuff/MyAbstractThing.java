@@ -11,6 +11,7 @@ public abstract class MyAbstractThing {
 	this.bar = bar;
     }
 
+    // this method is the issue. 
     public abstract void doStuff(int baz);
 
     protected int getFoo() {

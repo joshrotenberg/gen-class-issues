@@ -1,8 +1,13 @@
 (ns gen-class-issue.core-test
-  (:import [stuff MyConcreteThing MyConcreteThing$Builder])
+  (:import [stuff MyConcreteThing MyConcreteThing$Builder MyOtherConcreteThing])
   (:require [clojure.test :refer :all]
             [gen-class-issue.my-concrete-thing :refer :all]))
 
+(deftest java-implementation
+  (testing "stuff.MyOtherConcreteThing"
+    (let [m (MyOtherConcreteThing. 1 2)]
+      (.doStuff m 2)
+      (println m))))
 ;; (deftest with-builder
 ;;   (testing "stuff.MyConcreteThing with builder"
 ;;     (let [b (MyConcreteThing$Builder.)]
